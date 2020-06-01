@@ -17,15 +17,11 @@
 import simplecrypt
 
 passwords = open('passwords.txt', 'r').readlines()
+encrypted = open("encrypted.bin", "rb").read()
 
-for i in passwords:
-    passwords[passwords.index(i)] = i.replace('\n', '')
-
-with open("encrypted.bin", "rb") as inp:
-    encrypted = inp.read()
-
-for j in passwords:
+for password in passwords:
+    password = password.strip()
     try:
-        print(simplecrypt.decrypt(j, encrypted))
+        print(simplecrypt.decrypt(password, encrypted).decode("utf-8"))
     except simplecrypt.DecryptionException:
-        pass
+        continue
