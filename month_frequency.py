@@ -1,3 +1,5 @@
+# create a formatted frequency table and analyze the appointment dates in our data set
+
 import datetime as dt
 
 from csv import reader
