@@ -20,3 +20,4 @@ for s in sectors:
     top_roa_by_sector[s] = f500[f500['sector'] == s].sort_values('roa', ascending=False).iloc[0].loc['company']
 
 print(top_roa_by_sector)
+
