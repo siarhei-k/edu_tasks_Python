@@ -17,5 +17,3 @@ for c in countries:
     top_employer_by_country[c] = f500[f500['country'] == c].sort_values("employees", ascending=False).iloc[0].loc['company']
 
 print(top_employer_by_country)
-
-
